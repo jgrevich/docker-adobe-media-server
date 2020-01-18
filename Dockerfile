@@ -36,7 +36,7 @@ RUN wget http://ftp.gnu.org/gnu/glibc/glibc-2.14.tar.gz
 RUN tar zxvf glibc-2.14.tar.gz
 WORKDIR cd glibc-2.14
 RUN mkdir build
-WORKDIR cd build
+WORKDIR build
 RUN ../configure --prefix=/opt/glibc-2.14
 RUN make -j4
 RUN make install
