@@ -23,6 +23,7 @@ ENV AMS_VERSION=5_1_6
 RUN yum update -y                   && \
     yum install -y tar epel-release && \
     yum install -y expect           && \
+    yum install -y gcc              && \
     yum install -y openssl-devel    && \
     yum install -y openssl          && \
     yum install -y psmisc           && \
@@ -34,7 +35,7 @@ RUN yum update -y                   && \
 RUN mkdir ~/glibc_install; cd ~/glibc_install
 RUN wget http://ftp.gnu.org/gnu/glibc/glibc-2.14.tar.gz
 RUN tar zxvf glibc-2.14.tar.gz
-WORKDIR cd glibc-2.14
+WORKDIR glibc-2.14
 RUN mkdir build
 WORKDIR build
 RUN ../configure --prefix=/opt/glibc-2.14
