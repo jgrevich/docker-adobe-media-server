@@ -16,7 +16,7 @@ make
 make install
 cd ..
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+export LD_LIBRARY_PATH="/opt/glibc-2.14/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}:/usr/local/lib"
 ldconfig
 
 echo "installing curl"
