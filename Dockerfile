@@ -97,5 +97,8 @@ WORKDIR /opt/adobe/ams
 # Need to map these to host ports with docker run / compose
 EXPOSE 80 443 1111 1935
 
+RUN chmod +x  /opt/adobe/ams/Apache2.4/modules/mod_f4fhttp.so
+
 COPY ./start.sh /
+
 CMD /start.sh
